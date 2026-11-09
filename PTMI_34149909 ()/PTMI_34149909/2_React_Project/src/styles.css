@@ -1,0 +1,249 @@
+/* Mobile-first styles: the default CSS is for phones,
+   the media queries at the bottom change it for bigger screens */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  background: #f2f6fa;
+  color: #1c2733;
+  line-height: 1.5;
+}
+
+.header {
+  background: #0b5cab;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+}
+
+.header p {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column; /* mobile: stacked */
+  gap: 16px;
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #d5dee8;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.panel h2 {
+  margin: 0 0 12px;
+  font-size: 1.2rem;
+  color: #084480;
+}
+
+/* ---------- Filter ---------- */
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 12px; /* large touch targets */
+  font-size: 1rem;
+  border: 1px solid #d5dee8;
+  border-radius: 8px;
+  background: #fff;
+}
+
+select:focus,
+input:focus {
+  outline: 2px solid #0b5cab;
+  border-color: #0b5cab;
+}
+
+.count {
+  color: #5d6b7a;
+  font-size: 0.85rem;
+  margin: 10px 0;
+}
+
+/* ---------- Treatment cards ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile: 1 column */
+  gap: 12px;
+}
+
+.card {
+  border: 1px solid #d5dee8;
+  border-left: 5px solid #0b5cab;
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #fbfdff;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  background: #e3effb;
+  color: #084480;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.card-id {
+  font-weight: 700;
+  color: #5d6b7a;
+  font-size: 0.85rem;
+}
+
+.card-title {
+  margin: 8px 0 4px;
+  font-size: 1.05rem;
+}
+
+.card-date {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #5d6b7a;
+}
+
+.empty {
+  color: #5d6b7a;
+  font-style: italic;
+}
+
+/* ---------- Form ---------- */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid #0b5cab;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #0b5cab;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: #084480;
+}
+
+.btn.secondary {
+  background: #fff;
+  color: #0b5cab;
+}
+
+.btn.secondary:hover {
+  background: #eaf3fc;
+}
+
+.error {
+  color: #b3261e;
+  font-size: 0.9rem;
+  margin: 10px 0 0;
+}
+
+.result {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px dashed #d5dee8;
+}
+
+.result h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.footer {
+  text-align: center;
+  color: #5d6b7a;
+  font-size: 0.8rem;
+  padding: 16px;
+}
+
+/* ---------- Tablet (>= 600px) ---------- */
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn {
+    flex: none;
+  }
+}
+
+/* ---------- Desktop (>= 992px) ---------- */
+@media (min-width: 992px) {
+  .layout {
+    flex-direction: row; /* side by side */
+    align-items: flex-start;
+    padding: 24px;
+  }
+
+  .records {
+    flex: 2;
+  }
+
+  .layout > .panel:last-child {
+    flex: 1;
+    position: sticky;
+    top: 16px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
